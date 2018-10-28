@@ -1,0 +1,231 @@
+/* You can add global styles to this file, and also import other style files */
+
+/*
+    CSS styles for the entire site
+*/
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: #444;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 30px;
+    color: darkgray;
+    font-size: 17px;
+    margin-top: 20px;
+}
+
+.body-content a:not(.k-button),
+.body-content a:active {
+   color: darkgray;
+   text-decoration: none;
+}
+
+/*
+   Override the default bootstrap behavior where horizontal description lists
+   will truncate terms that are too long to fit in the left column
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+.page-contents {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+h2 {
+    color: #fffafa;
+}
+
+hr {
+    border-top-color: #555;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.checkbox input[type=checkbox] {
+    margin-left: 0;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/* border box sizing for bootstrapper classes within Kendo widgets use content-box sizing */
+.border-box,
+.border-box *,
+.border-box *:before,
+.border-box *:after
+ {
+    -webkit-box-sizing: border-box !important;
+    -moz-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+}
+
+/* content box sizing for bootstrapper classes within Kendo widgets use content-box sizing */
+.content-box,
+.content-box *,
+.content-box *:before,
+.content-box *:after
+ {
+    -webkit-box-sizing: content-box !important;
+    -moz-box-sizing: content-box !important;
+    box-sizing: content-box !important;
+}
+
+/* logo image */
+.navbar-brand img {
+    margin: -6px 0 -6px 0;
+}
+
+.navbar-right.form {
+    margin-right: 0;
+}
+
+.user-name {
+    cursor: default;
+}
+
+.buttons-wrap {
+    border-top: 1px solid #AAA;
+    padding-top: 0.7em;
+    text-align: right;
+}
+
+.window-bg {
+    background-color: #F5F5F5;
+    padding:10px;
+}
+
+.popup-windows {
+     padding-left:40px;
+    -moz-min-width: 400px;
+    -ms-min-width: 400px;
+    -o-min-width: 400px;
+    -webkit-min-width: 400px;
+    min-width: 400px;
+}
+
+.popup-large {
+    font-size: 21px;
+    width: 680px;
+}
+.popup-medium {
+    font-size: 18px
+}
+.popup-small {
+    font-size: 16px
+}
+
+.single-letter-space {
+    display:inline-block;
+    width: 6px;
+}
+
+.hyperlink-button-text {
+    color: #fff !important;
+    font-weight: bold;
+    background-color:#f35800
+}
+
+@media (max-width: 1500px) {
+  .popup-large {
+       width: auto;
+   }
+}
+
+@media (max-width: 450px) {
+    .popup-windows {
+        padding-left:10px;
+        -moz-min-width: 280px;
+        -ms-min-width: 280px;
+        -o-min-width: 280px;
+        -webkit-min-width: 280px;
+        min-width: 280px;
+    }
+    .popup-large {
+        font-size: 16px;
+    }
+    .popup-medium {
+        font-size: 14px
+    }
+    .popup-small {
+        font-size: 12px
+    }
+}
+
+/* when in mobile view*/
+@media (max-width: 364px) {
+   .hmi-tile-col {
+        -moz-min-width: 320px;
+        -ms-min-width: 320px;
+        -o-min-width: 320px;
+        -webkit-min-width: 320px;
+        min-width: 320px;
+    }
+}
+
+@media (max-width: 960px) {
+   .hmi-value-medium {
+       font-size: 20px;
+   }
+   h2, .h2 {
+        font-size: 30px;
+   }
+}
+
+ul.nav a.user-name {
+    color: #ffffff !important;
+    font-weight: bold
+}
+
+ul.nav a.user-name:hover {
+    color: #ffffff !important;
+    font-weight: bold
+}
+
+ul.nav a#site-time-text,
+ul.nav a#site-time-text:hover {
+    color: #9d9d9d !important;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.2), not all
+{
+    .k-i-info, .k-i-warning, .k-warning {
+        background-position: -162px -240px !important
+    }
+}
