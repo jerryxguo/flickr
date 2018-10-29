@@ -10,7 +10,7 @@ import { FlickrService } from '../flickr.service';
 export class HomeComponent implements OnInit {
 
   flickrs : Flickr[];
-  private searchTag ="" ;
+  private searchTag:string ="" ;
   constructor(private flickrService: FlickrService) { }
 
   ngOnInit() {
