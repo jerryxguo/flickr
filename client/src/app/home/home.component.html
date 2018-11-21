@@ -3,7 +3,7 @@
   <form #searchForm="ngForm" appIdentityRevealed>
     <div class="cross-validation" [class.cross-validation-error]="searchForm.errors?.identityRevealed && (searchForm.touched || searchForm.dirty)">
       <div class="form-group">
-        <input name="name" placeholder="tag" class="form-control" (keyup)="onKeyup($event)"
+        <input name="name" placeholder="tag" class="form-control" (keyup)="onKeyup(searchForm.invalid, $event)"
           required minlength="4" appForbiddenName="bob"
           [(ngModel)]="searchTag" #newSearch="ngModel">
         <div *ngIf="newSearch.invalid && (newSearch.dirty || newSearch.touched)" class="alert alert-danger search-term">
@@ -20,7 +20,7 @@
       </div>
     </div>
   </form>
-  <button id="search" class="search-button" (click)="startSearch()">Search</button>
+  <button id="search" class="search-button" [disabled]="searchForm.invalid" (click)="startSearch()">Search</button>
 </div>
 
 <div class="row">

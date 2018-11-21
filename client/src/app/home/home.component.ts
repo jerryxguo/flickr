@@ -19,8 +19,8 @@ export class HomeComponent implements OnInit {
   startSearch() {
     this.getPhotos();
   }
-  onKeyup(event) {
-    if (event.key === "Enter") {
+  onKeyup(invalid, event) {
+    if (event.key === "Enter" && !invalid) {
       this.getPhotos();
     }
   }
