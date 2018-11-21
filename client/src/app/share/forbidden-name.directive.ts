@@ -13,7 +13,7 @@ export function forbiddenNameValidator(nameRe: RegExp): ValidatorFn {
   selector: '[appForbiddenName]',
   providers: [{provide: NG_VALIDATORS, useExisting: ForbiddenValidatorDirective, multi: true}]
 })
-export class ForbiddenValidatorDirective implements Validator {
+ export class ForbiddenValidatorDirective implements Validator {
   @Input('appForbiddenName') forbiddenName: string;
 
   validate(control: AbstractControl): {[key: string]: any} | null {
