@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavComponent } from './nav/nav.component';
+import { ForbiddenValidatorDirective } from './share/forbidden-name.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     FooterComponent,
-    NavComponent
+    NavComponent,
+    ForbiddenValidatorDirective
   ],
   imports: [
     BrowserModule,
