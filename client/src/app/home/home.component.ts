@@ -10,19 +10,17 @@ import { FlickrService } from '../flickr.service';
 export class HomeComponent implements OnInit {
 
   flickrs : Flickr[];
-  private searchTag:string ="" ;
+  private searchTag ="" ;
   constructor(private flickrService: FlickrService) { }
 
   ngOnInit() {
     this.getPhotos();
   }
-  onClick(newSearch) {
-    this.searchTag = newSearch;
+  startSearch() {
     this.getPhotos();
   }
-  onKeyup(newSearch, event) {
+  onKeyup(event) {
     if (event.key === "Enter") {
-      this.searchTag = newSearch;
       this.getPhotos();
     }
   }

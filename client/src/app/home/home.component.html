@@ -1,7 +1,28 @@
-<div class="search-item">
-  <input #newSearch placeholder="tag" class="search-term" (keyup)="onKeyup(newSearch.value, $event)"/>
-  <button id="search" class="search-button" (click)="onClick(newSearch.value)">Search</button>
+
+ <div class="search-item">
+  <form #searchForm="ngForm" appIdentityRevealed>
+    <div class="cross-validation" [class.cross-validation-error]="searchForm.errors?.identityRevealed && (searchForm.touched || searchForm.dirty)">
+      <div class="form-group">
+        <input name="name" placeholder="tag" class="form-control" (keyup)="onKeyup($event)"
+          required minlength="4" appForbiddenName="bob"
+          [(ngModel)]="searchTag" #newSearch="ngModel">
+        <div *ngIf="newSearch.invalid && (newSearch.dirty || newSearch.touched)" class="alert alert-danger search-term">
+          <div *ngIf="newSearch.errors.required">
+            Name is required.
+          </div>
+          <div *ngIf="newSearch.errors.minlength">
+            Name must be at least 4 characters long.
+          </div>
+          <div *ngIf="newSearch.errors.forbiddenName">
+            Name cannot be Bob.
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <button id="search" class="search-button" (click)="startSearch()">Search</button>
 </div>
+
 <div class="row">
   <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 search-result" *ngFor="let f of flickrs">
         <img src={{f.url}} class="photo"/>
